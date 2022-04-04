@@ -13,7 +13,7 @@ public class LoginTest {
     @Test
     public void testLogin() {
         open(LoginPage.url);
-        User user = new User("89111833275", "195106039*", "Егений Буровников");
+        User user = new User("89111833275", "***", "Егений Буровников");
         LoginPage loginPage = new LoginPage();
         try {
             MainPage mainPage = loginPage.login(user);
