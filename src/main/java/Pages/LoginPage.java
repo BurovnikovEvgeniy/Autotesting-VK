@@ -17,7 +17,7 @@ public class LoginPage extends BasePage {
 
     public static final String url = "https://ok.ru/";
 
-    public MainPage login(User user) {
+    public MainPage doLogin(User user) {
         $(EMAIL_FIELD).sendKeys(user.getLogin());
         $(PASSWORD_FIELD).sendKeys(user.getPassword());
         $(LOG_IN_BUTTON).click();
@@ -25,5 +25,13 @@ public class LoginPage extends BasePage {
             throw new IllegalArgumentException("Invalid login or password values");
         }
         return new MainPage();
+    }
+    public MainPage doLogin(String login, String password) {
+        User user = new User
+                .UserBuilder()
+                .addLogin(login)
+                .addPassword(password)
+                .build();
+        return doLogin(user);
     }
 }
