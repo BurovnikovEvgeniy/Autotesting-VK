@@ -1,5 +1,9 @@
 package TestBots;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 public class User {
     private String login;
     private String password;
@@ -10,8 +14,10 @@ public class User {
         this.password = password;
         this.FirstAndLastName = name;
     }
+
     private User() {
     }
+
     public String getLogin() {
         return login;
     }
@@ -23,6 +29,17 @@ public class User {
     public String getPassword() {
         return password;
     }
+
+    public static String readPasswordFromFile(String path) {
+        String password = "";
+        try {
+            password = Files.readString(Paths.get(path));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return password;
+    }
+
     public static class UserBuilder {
         private final User user = new User();
 
@@ -30,6 +47,7 @@ public class User {
             this.user.login = login;
             return this;
         }
+
         public UserBuilder addPassword(String password) {
             this.user.password = password;
             return this;

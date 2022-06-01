@@ -1,6 +1,9 @@
 package Utils;
 
+
 import org.openqa.selenium.By;
+
+import com.codeborne.selenide.Condition;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -16,7 +19,7 @@ public class ToolbarDecorator implements Toolbar {
         if (isVisibleToolbar()) {
             throw new RuntimeException("Illegal logic");
         }
-        $(openPathOnToolbar).click();
+        $(openPathOnToolbar).shouldBe(Condition.visible).click();
     }
     @Override
     public void close(By closePathOnToolbar) {
@@ -28,7 +31,7 @@ public class ToolbarDecorator implements Toolbar {
 
     @Override
     public boolean isVisibleToolbar() {
-        return !$(toolbar).isDisplayed();
+        return !$(toolbar).shouldBe(Condition.visible).isDisplayed();
     }
 }
 
