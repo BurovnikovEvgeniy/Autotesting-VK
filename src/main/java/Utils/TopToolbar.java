@@ -15,6 +15,7 @@ public class TopToolbar extends ToolbarDecorator {
     private static final By POINT_TO_MAIN_PAGE = new By.ByXPath(".//*[contains(@id, \"topPanelLeftCorner\")]");
 
     private static final By GUESTS_BUTTON = new By.ByXPath(".//*[contains(@data-l, \"t,guests\")]");
+
     public TopToolbar() {
         super(TOP_TOOLBAR);
     }
@@ -23,6 +24,7 @@ public class TopToolbar extends ToolbarDecorator {
         $(GUESTS_BUTTON).shouldBe(Condition.visible).click();
         return new GuestsPage();
     }
+
     public static MainPage goToMainPage() {
         $(POINT_TO_MAIN_PAGE).shouldBe(Condition.visible).click();
         return new MainPage();

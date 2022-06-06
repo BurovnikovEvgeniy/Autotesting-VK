@@ -21,6 +21,7 @@ public class ToolbarDecorator implements Toolbar {
         }
         $(openPathOnToolbar).shouldBe(Condition.visible).click();
     }
+
     @Override
     public void close(By closePathOnToolbar) {
         if (isVisibleToolbar()) {

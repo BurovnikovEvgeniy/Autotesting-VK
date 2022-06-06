@@ -26,7 +26,7 @@ public class MiniUserToolbar extends ToolbarDecorator {
 
     @Step("Выход из системы")
     public void goOut() {
-     $(GO_OUT_PLACE).find(GO_OUT_BOTTOM).shouldBe(Condition.visible).click();
-     $(GO_OUT_CONFIRM).shouldBe(Condition.visible).click();
+        $(GO_OUT_PLACE).find(GO_OUT_BOTTOM).shouldBe(Condition.visible).click();
+        $(GO_OUT_CONFIRM).shouldBe(Condition.visible).click();
     }
 }

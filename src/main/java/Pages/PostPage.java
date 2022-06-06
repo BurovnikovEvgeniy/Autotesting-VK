@@ -2,7 +2,6 @@ package Pages;
 
 import org.openqa.selenium.By;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.Selenide;
@@ -26,6 +25,7 @@ public class PostPage extends BasePage implements PostInterface {
             = new By.ByXPath(".//div[@id=\"hook_Block_ShortcutMenu\"]//a[contains(@hrefattrs,\"StatusLayer_deleteButton\")]");
     private static final By SUCCESS_DELETE_POST
             = new By.ByXPath("//div[contains(@class, \"feed __deleted\")]");
+
     @Override
     public boolean check() {
         return $(ACTIVE_BUTTON_POST).shouldBe(Condition.visible).isDisplayed();
@@ -34,11 +34,11 @@ public class PostPage extends BasePage implements PostInterface {
     @Step("Удаление всех постов пользователя")
     public PostPage deleteAllPost() {
         ElementsCollection listPosts = $$(USER_POST_LIST);
-        if (listPosts.isEmpty()){
+        if (listPosts.isEmpty()) {
             return this;
         }
         listPosts.get(0).shouldBe(Condition.visible);
-        for (SelenideElement el: listPosts) {
+        for (SelenideElement el : listPosts) {
             $(POINT_TO_DELETE_BUTTON)
                     .shouldBe(Condition.visible)
                     .hover();
@@ -53,7 +53,7 @@ public class PostPage extends BasePage implements PostInterface {
     }
 
     @Step("Перезагрузка страницы")
-    public PostPage reload(){
+    public PostPage reload() {
         Selenide.refresh();
         return new PostPage();
     }

@@ -7,14 +7,12 @@ import org.junit.jupiter.api.Test;
 import Tests.BaseTest;
 import io.qameta.allure.Description;
 
-public class NullPointerTest extends BaseTest
-{
+public class NullPointerTest extends BaseTest {
     @Tag("NullPointer")
     @Test
     @DisplayName("Тест категории \"Нет данных\"")
     @Description("Должен попасть в категорию \"Нет данных\", выбрасывая NullPointerException")
-    public void testCategoryNullPointer()
-    {
+    public void testCategoryNullPointer() {
         throw new NullPointerException();
     }
 }

@@ -28,10 +28,11 @@ public class AddPostTest extends BaseTest {
     private MainPage mainPage;
     private RandomValueGenerator<String> messages;
     private RandomValueGenerator<Music.MusicalComposition> compositions;
+
     @BeforeEach
     public void beginAllTests() {
         mainPage = new LoginPage().doLogin(user);
-        messages = new RandomValueGenerator<>(new ArrayList<>(Arrays.asList("Hello","It's impossible","Very cool")));
+        messages = new RandomValueGenerator<>(new ArrayList<>(Arrays.asList("Hello", "It's impossible", "Very cool")));
         compositions = new RandomValueGenerator<>(new ArrayList<>(Arrays.asList(
                 new Music.MusicalComposition("Summertime Sadness", "Lana Del Rey"),
                 new Music.MusicalComposition("Пчеловод", "RASA"),
@@ -80,7 +81,6 @@ public class AddPostTest extends BaseTest {
         Assertions.assertTrue(postPage.check());
         Assertions.assertTrue(postPage.isPostsExist());
     }
-
 
 
     @AfterEach

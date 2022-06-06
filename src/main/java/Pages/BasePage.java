@@ -8,5 +8,6 @@ public abstract class BasePage {
     public BasePage() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
+
     public abstract boolean check();
 }

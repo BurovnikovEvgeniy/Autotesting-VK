@@ -1,5 +1,9 @@
 package Tests;
 
+import java.io.File;
+import java.nio.file.Paths;
+import java.util.Objects;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,12 +19,13 @@ public class BaseTest {
 
     public static final String url = "https://ok.ru/";
     protected static final User user = SetUser.EvgeniyBurovnikov;
+
     @BeforeAll
     static void cleanAllureResults() {
-//        for (File myFile : Objects.requireNonNull(new File(String.valueOf(Paths.get("allure-results"))).listFiles()))
-//            if (myFile.isFile()) {
-//                myFile.delete();
-//            }
+        for (File myFile : Objects.requireNonNull(new File(String.valueOf(Paths.get("allure-results"))).listFiles()))
+            if (myFile.isFile()) {
+                myFile.delete();
+            }
     }
 
     @BeforeEach

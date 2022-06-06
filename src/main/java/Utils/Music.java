@@ -14,13 +14,16 @@ public class Music {
     public static class MusicalComposition {
         private final String title;
         private final String artist;
+
         public MusicalComposition(String title, String artist) {
             this.title = title;
             this.artist = artist;
         }
+
         public String getTitle() {
             return title;
         }
+
         public String getArtist() {
             return artist;
         }
@@ -45,6 +48,7 @@ public class Music {
     public String getArtist() {
         return music.find(ARTIST_MUSIC).getText();
     }
+
     public String getTitle() {
         return music.find(TITLE_MUSIC).getText();
     }
@@ -61,7 +65,7 @@ public class Music {
     }
 
     @Step("Удаление композиции в коллекции пользователя")
-    public void deleteFromUsersCollection(){
+    public void deleteFromUsersCollection() {
         music
                 .hover()
                 .find(REMOVE_TRACK_BUTTON)

@@ -9,7 +9,7 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class MarksWindow implements Window{
+public class MarksWindow implements Window {
     private static final By MARKS_BUTTON = new By.ByXPath(".//*[contains(@data-l, \"t,marks\")]");
     private static final By MARKS_STATUS_OPEN
             = new By.ByXPath("//*[contains(@class, \"h-mod toolbar_nav_a toolbar_nav_a__feedback toolbar_nav_a__feedback__active\")]");

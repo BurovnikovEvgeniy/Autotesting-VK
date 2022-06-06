@@ -49,7 +49,6 @@ public class AddMusicTest extends BaseTest {
     }
 
 
-
     static class MusicArgumentsProvider implements ArgumentsProvider {
         @Override
         public Stream<? extends Arguments> provideArguments(ExtensionContext context) {

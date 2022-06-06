@@ -14,6 +14,7 @@ public class NotificationsWindow implements Window {
     private static final TopToolbar topToolbar = new TopToolbar();
     private static final By NOTIF_OPEN_STATUS
             = new By.ByXPath("//*[contains(@class, \"toolbar_nav_a toolbar_nav_a__notif toolbar_nav_a__notif__active\")]");
+
     public NotificationsWindow() {
         topToolbar.open(NOTIFICATIONS_BUTTON);
     }
